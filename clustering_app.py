@@ -1,7 +1,9 @@
 import streamlit as st
 import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+import plotly.express as px
 
 st.title("Íris Clustering")
 
@@ -29,23 +31,30 @@ st.markdown("""### Classes que podem ser encontradas:
 * Iris Virginica""")
 
 st.subheader("Dados")
-st.write(df)
+st.dataframe(df)
 
 st.markdown("Verificando a quantidade por tipo de classe, conforme especificado, tem-se 50 instâncias por cada uma das 3 classes nas 4 dimensões do dataset.")
 st.write(df["variety"].value_counts())
 
-col1, col2 = st.beta_columns(2)
+st.markdown("Plotando gráfico")
 
-with col1:
-    sns.scatterplot(data= df, x= "sepal.length", y= "sepal.width", hue= "variety")
-    plt.ylabel('sepal.width')
-    plt.xlabel('sepal.length')
-    plt.show()
 
-with col2:
-    sns.scatterplot(data= df, x= "petal.length", y= "petal.width", hue= "variety")
-    plt.ylabel('petal.width')
-    plt.xlabel('petal.length')
-    plt.show()
+#sns.scatterplot(data=df, x="sepal.length", y="sepal.width", hue="variety")
+#plt.show()
+
+#st.pyplot(plt)
+
+#############################
+
+fig, axes = plt.subplots(1, 2, figsize=(15, 5))
+fig.suptitle('Sépalas e Pétalas')
+
+sns.scatterplot(ax=axes[0], x=df["sepal.length"], y=df["sepal.width"], hue=df["variety"])
+#axes[0].set_title(bulbasaur.name)
+
+sns.scatterplot(ax=axes[1], x=df["petal.length"], y=df["petal.width"], hue=df["variety"])
+#axes[1].set_title(charmander.name)
+st.pyplot(fig)
+plt.clf()
 
 X = df.iloc[:, 0:4]
