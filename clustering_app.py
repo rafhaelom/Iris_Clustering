@@ -64,4 +64,6 @@ axes[1].set_title("Pétala")
 st.pyplot(fig)
 plt.clf()
 
+st.markdown("Testando inclusão de texto!")
+
 X = df.iloc[:, 0:4]
