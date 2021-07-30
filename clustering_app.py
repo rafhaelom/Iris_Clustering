@@ -46,26 +46,12 @@ st.markdown("""|Coluna |Descrição |
 |variety | Classe|""")
 
 
-st.markdown("""### Classes que podem ser encontradas:
-* Iris Setosa
-* Iris Versicolour
-* Iris Virginica""")
-
-st.subheader("Dados")
-st.dataframe(df)
+st.markdown("""### Classes que podem ser encontradas:""")
 
 st.markdown("Verificando a quantidade por tipo de classe, conforme especificado, tem-se 50 instâncias por cada uma das 3 classes nas 4 dimensões do dataset.")
 st.write(df["variety"].value_counts())
 
-st.markdown("Plotando gráfico")
-
-
-#sns.scatterplot(data=df, x="sepal.length", y="sepal.width", hue="variety")
-#plt.show()
-
-#st.pyplot(plt)
-
-#############################
+st.markdown("Distribuição de cada classe conforme o dataset")
 
 fig, axes = plt.subplots(1, 2, figsize=(12, 6))
 fig.suptitle('Sépalas e Pétalas')
