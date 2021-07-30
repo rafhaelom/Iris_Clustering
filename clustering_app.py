@@ -66,4 +66,9 @@ plt.clf()
 
 st.markdown("Testando inclusão de texto!")
 
+
+st.markdown("Testando inclusão de texto!")
+st.markdown("Testando inclusão de texto!")
+
+
 X = df.iloc[:, 0:4]
