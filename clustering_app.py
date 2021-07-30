@@ -34,7 +34,7 @@ st.subheader("Dataset :floppy_disk:")
 df = pd.read_csv("iris.csv")
 
 if st.checkbox("Mostrar o dataset"):
-    df    
+    st.dataframe(df)    
 
 st.subheader("Dicionário de dados")
 st.markdown("""|Coluna |Descrição |
