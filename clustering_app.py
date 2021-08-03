@@ -45,16 +45,25 @@ st.markdown("""|Coluna |Descrição |
 |petal.width | Largura da pétala|
 |variety | Classe|""")
 
+<<<<<<< HEAD
 st.markdown("""### Classes que podem ser encontradas:
 * Iris Setosa
 * Iris Versicolour
 * Iris Virginica""")
+=======
+
+st.markdown("""### Classes que podem ser encontradas:""")
+>>>>>>> abb9e0b72d78d2236f99d05bdf73ac8735279db6
 
 st.markdown("Verificando a quantidade por tipo de classe, conforme especificado, tem-se 50 instâncias por cada uma das 3 classes nas 4 dimensões do dataset.")
 st.write(df["variety"].value_counts())
 
+<<<<<<< HEAD
 # Gráfico.
 st.markdown("Gráfico com a dispersão dos dados com a separação pela categoria do dataset de origem.")
+=======
+st.markdown("Distribuição de cada classe conforme o dataset")
+>>>>>>> abb9e0b72d78d2236f99d05bdf73ac8735279db6
 
 fig, axes = plt.subplots(1, 2, figsize=(12, 6))
 fig.suptitle('Sépalas e Pétalas pela classe da planta')
@@ -67,8 +76,19 @@ axes[1].set_title("Pétala")
 st.pyplot(fig)
 plt.clf()
 
+<<<<<<< HEAD
 st.subheader("Preparação dos dados")
 st.markdown("Nesta etapa será necessária a separação da coluna `variety`")
 X = df.iloc[:, 0:4]
 
 # Referência: https://www.youtube.com/watch?v=EItlUEPCIzM
+=======
+st.markdown("Testando inclusão de texto!")
+
+
+st.markdown("Testando inclusão de texto!")
+st.markdown("Testando inclusão de texto!")
+
+
+X = df.iloc[:, 0:4]
+>>>>>>> abb9e0b72d78d2236f99d05bdf73ac8735279db6
