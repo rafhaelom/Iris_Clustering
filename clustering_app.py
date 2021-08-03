@@ -45,30 +45,19 @@ st.markdown("""|Coluna |Descrição |
 |petal.width | Largura da pétala|
 |variety | Classe|""")
 
-
 st.markdown("""### Classes que podem ser encontradas:
 * Iris Setosa
 * Iris Versicolour
 * Iris Virginica""")
 
-st.subheader("Dados")
-st.dataframe(df)
-
 st.markdown("Verificando a quantidade por tipo de classe, conforme especificado, tem-se 50 instâncias por cada uma das 3 classes nas 4 dimensões do dataset.")
 st.write(df["variety"].value_counts())
 
-st.markdown("Plotando gráfico")
-
-
-#sns.scatterplot(data=df, x="sepal.length", y="sepal.width", hue="variety")
-#plt.show()
-
-#st.pyplot(plt)
-
-#############################
+# Gráfico.
+st.markdown("Gráfico com a dispersão dos dados com a separação pela categoria do dataset de origem.")
 
 fig, axes = plt.subplots(1, 2, figsize=(12, 6))
-fig.suptitle('Sépalas e Pétalas')
+fig.suptitle('Sépalas e Pétalas pela classe da planta')
 
 sns.scatterplot(ax=axes[0], x=df["sepal.length"], y=df["sepal.width"], hue=df["variety"])
 axes[0].set_title("Sépala")
@@ -78,4 +67,8 @@ axes[1].set_title("Pétala")
 st.pyplot(fig)
 plt.clf()
 
+st.subheader("Preparação dos dados")
+st.markdown("Nesta etapa será necessária a separação da coluna `variety`")
 X = df.iloc[:, 0:4]
+
+# Referência: https://www.youtube.com/watch?v=EItlUEPCIzM
