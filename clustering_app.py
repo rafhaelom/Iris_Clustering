@@ -78,6 +78,10 @@ if st.checkbox("Mostrar o dataset preparado"):
 
 st.subheader("Modelo")
 st.markdown("""Utilizaremos o KMeans que não será passado a target para o modelo, e por esse motivo ele é considerado um modelo 
-de não-supervisionado.""")
+de não-supervisionado. 
+A grande questão do algoritmo KMeans exige a específicação do número de grupos K. Às vezes, o número de grupos é direcionado pela 
+aplicação. Por exemplo, no nosso dataset sabemos que tem-se 3 tipos diferentes de flores íris, portanto o mínimo de clusters ou grupos 
+necessário para o modelo é de 3. Mas em momentos não temos essa noção de grupos
+A maneira mais simples de se chamar o modelo: ``""")
 
-# Referência: https://www.youtube.com/watch?v=EItlUEPCIzM
+# Referência: https://www.youtube.com/watch?v=EItlUEPCIzM E https://medium.com/pursuitnotes/k-means-clustering-model-in-6-steps-with-python-35b532cfa8ad
