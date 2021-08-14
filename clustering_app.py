@@ -4,6 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.express as px
+from sklearn.cluster import KMeans
 
 st.title("Íris Clustering")
 
@@ -95,6 +96,7 @@ necessário para o modelo é de 3.
 
 st.image("images/flores_iris.png")
 
+st.subheader("Método do Cotovelo")
 st.markdown("""Mas em alguns momentos não temos essa noção de grupos, e portanto precisamos de uma definição deste, sendo 
 então necessária uma abordagem estatística, o mais comum é utilizar de um método para definir o número de clusters para o modelo.""")
 
@@ -103,6 +105,69 @@ a ***maioria*** da variância nos dados. O ***cotovelo*** é o ponto em que a va
 por isso o nome do método.""")
 
 
+wcss = []
+for i in range(1, 11):
+    kmeans = KMeans(n_clusters = i, max_iter = 300, n_init = 10, random_state = 0)
+    kmeans.fit(X)
+    wcss.append(kmeans.inertia_)
+
+sns.lineplot(range(1, 11), wcss)
+plt.title("Curva do Cotovelo")
+plt.xlabel("Número de Clusters")
+plt.ylabel("Somatório da variância explicada cumulativa")
+st.pyplot(fig)
+plt.clf()
+
+st.markdown("""Percebe-se que no gráfico da **Curva do Cotovelo** o melhor valor para o número de cluters 
+no modelo KMeans é de 3 clusters.""")
+
+# Algoritmo KMeans.
+kmeans = KMeans(n_clusters = 3, max_iter = 300, n_init = 10, random_state = 0)
+kmeans.fit(X)
+clusters = kmeans.fit_predict(X)
+
+# Coordenadas de cada centroid pela dimensão.
+centroids = kmeans.cluster_centers_
+
+# Número de clusters.
+st.write("Número de Clusters: ", kmeans.n_clusters)
+
+# Labels preditas.
+labels = kmeans.labels_
+
+# Faz a clusterização dos dados usando o modelo criado
+grupos = kmeans.predict(X)
+
+# Gráfico com os Clusters.
+plt.scatter(X.iloc[clusters == 0,0], X.iloc[clusters == 0,1], s=50, color='red')
+plt.scatter(X.iloc[clusters == 1,0], X.iloc[clusters == 1,1], s=50, color='green')
+plt.scatter(X.iloc[clusters == 2,0], X.iloc[clusters == 2,1], s=50, color='yellow')
+
+plt.scatter(centroids[0][0], centroids[0][1], marker="*", s=200, color='black')
+plt.scatter(centroids[1][0], centroids[1][1], marker="*", s=200, color='black')
+plt.scatter(centroids[2][0], centroids[2][1], marker="*", s=200, color='black')
+
+plt.title("Clusters por flor e seus centroids")
+st.pyplot(fig)
+plt.clf()
+
+st.subheader("""Avaliando o modelo""")
+st.markdown("""Utilizaremos a tabela cruzada para verificar a qualidade das predições feitas pelo modelo.""")
+
+df1 = pd.DataFrame({'labels':labels, "species":df['variety']})
+ct = pd.crosstab(df1['labels'], df1['species'])
+
+st.write(ct)
+
+st.markdown("""Para melhorar a visualização da predição do modelo, será feito o gráfico desta tabela cruzada.""")
+
+plt.title("KMeans")
+sns.heatmap(ct,annot=True,cbar=False,cmap="Blues") #annot mostra os coeficientes da matriz
+st.pyplot(fig)
+plt.clf()
+
+st.markdown("""Pode-se perceber que o modelo acertou todas as `50` flores do tipo **Setosa**, mas está errando `14` flores do 
+tipo **Víginica** e `2` do tipo **Versicolor**. Mas já podemos ver o funcionamento do mesmo""")
 
 st.markdown("""## Referências: 
 * https://www.youtube.com/watch?v=EItlUEPCIzM 
