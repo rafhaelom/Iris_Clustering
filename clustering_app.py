@@ -169,6 +169,8 @@ plt.clf()
 st.markdown("""Pode-se perceber que o modelo acertou todas as `50` flores do tipo **Setosa**, mas está errando `14` flores do 
 tipo **Víginica** e `2` do tipo **Versicolor**. Mas já podemos ver o funcionamento do mesmo""")
 
+# testando linha adicional.
+
 st.markdown("""## Referências: 
 * https://www.youtube.com/watch?v=EItlUEPCIzM 
 * https://medium.com/pursuitnotes/k-means-clustering-model-in-6-steps-with-python-35b532cfa8ad
