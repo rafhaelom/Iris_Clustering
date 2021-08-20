@@ -9,30 +9,27 @@ from sklearn.cluster import KMeans
 st.title("Íris Clustering")
 
 st.header("O que é o Íris? :tulip:")
-st.markdown("""No artigo de Fisher, o Íris é um clássico dataset na área de reconhecimento de padrões, 
-sendo referênciado com frequência até hoje. A base de dados (dataset) contém 3 classes de 50 instâncias 
-cada, onde cada classe se refere a um tipo de planta íris, sendo uma espécie(classe) de flor é linearmente 
-separável das outras duas, mas as outras duas não são linearmente separáveis ​​uma da outra.""")
+st.markdown("<p align='justify'> No artigo de Fisher, o Íris é um clássico dataset na área de reconhecimento de padrões, sendo referênciado com frequência até hoje. A base de dados (dataset) contém 3 classes de 50 instâncias cada, onde cada classe se refere a um tipo de planta íris, sendo uma espécie(classe) de flor é linearmente separável das outras duas, mas as outras duas não são linearmente separáveis ​​uma da outra. <p align='justify'>", unsafe_allow_html=True)
 
 st.image("images/flores_petal_sepal.png")
 
 st.header("E o Clustering? :dart:")
-st.markdown("""*Clustering ou Agrupamento*, é o conjunto de técnicas de **data mining** (mineração de dados no português)
-que visa fazer *agrupamentos automáticos* de dados segundo o seu grau de semelhança. O critério de semelhança faz parte 
-da *definição do problema* e, dependendo, *do algoritmo*. A cada conjunto de dados resultante do processo da-se o nome 
-de **cluster** (grupo, aglomerado ou agrupamento).""")
+st.markdown("""<p align='justify'> <b>Clustering ou Agrupamento</b>, é o conjunto de técnicas de <b>data mining</b> (mineração de dados no português)
+que visa fazer <i>agrupamentos automáticos</i> de dados segundo o seu grau de semelhança. O critério de semelhança faz parte 
+da <i>definição do problema</i> e, dependendo, <i>do algoritmo</i>. A cada conjunto de dados resultante do processo da-se o nome 
+de <b>cluster</b> (grupo, aglomerado ou agrupamento). <p align='justify'>""", unsafe_allow_html=True)
 
 st.image("images/cluster.png")
 
 st.subheader("Bom, já descobrimos o que é Íris e o que é Clustering, mas e agora? :astonished:")
-st.markdown("""Agora vamos entender o problema de negócio que pretendemos solucionar, entender qual e o que é o dado que temos! :grin:""")
+st.markdown("""<p align='justify'>Agora vamos entender o problema de negócio que pretendemos solucionar, entender qual e o que é o dado que temos! &#x1F601 <p align='justify'>""", unsafe_allow_html=True)
 
 st.subheader("""Problema de negócio :nerd_face:""")
-st.markdown("""A Clusterização pode ser usada tanto na preparação de dados para descobrir padrões ainda desconhecidos quanto para a criação 
+st.markdown("""<p align='justify'>A Clusterização pode ser usada tanto na preparação de dados para descobrir padrões ainda desconhecidos quanto para a criação 
 de modelos com o objetivo de criar grupos, separando os dados em grupos ainda desconhecidos. A ideia é a partir dos dados referentes ao tamanho 
-da **Pétala** e da **Sépala** de cada flor, ou seja, as variáveis `sepal.length`, `sepal.width`, `petal.length` e `petal.width`, seja possível encontrar e
-definir qual é a classe/grupo `variety` de flor íris pertence o dado.""")
-st.image("images/petal_sepal.png")   
+da <b>Pétala</b> e da <b>Sépala</b> de cada flor, ou seja, as variáveis <code>sepal.length</code>, <code>sepal.width</code>, <code>petal.length</code> e <code>petal.width</code>, seja possível encontrar e
+definir qual é a classe/grupo <code>variety</code> de flor íris pertence o dado. <p align='justify'>""", unsafe_allow_html=True)
+st.image("<center>images/petal_sepal.png</center>")   
 
 st.markdown("""Utilizando um modelo de clusterização, ou seja, um modelo de aprendizado de máquina (machine learning) não-supervisionado, para classificar/prever 
 as espécies da flor da íris em três espécies neste conjunto de dados. Este modelo de machine learning não utiliza a target, e por isso é chamado de 
@@ -350,4 +347,7 @@ st.markdown("""## Referências:
 * https://medium.com/greyatom/using-clustering-for-feature-engineering-on-the-iris-dataset-f438366d0b4b
 * https://www.kaggle.com/rae385/iris-classification-and-visualization
 * https://www.javatpoint.com/k-means-clustering-algorithm-in-machine-learning
-* https://matplotlib.org/stable/gallery/color/named_colors.html""")
+* https://matplotlib.org/stable/gallery/color/named_colors.html
+* https://www.w3schools.com/charsets/ref_emoji_smileys.asp
+* https://www.tc.df.gov.br/ice4/vordf/outros/html-comandos.html
+* https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/code""")
