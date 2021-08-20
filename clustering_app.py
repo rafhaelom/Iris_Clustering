@@ -350,4 +350,8 @@ st.markdown("""## Referências:
 * https://matplotlib.org/stable/gallery/color/named_colors.html
 * https://www.w3schools.com/charsets/ref_emoji_smileys.asp
 * https://www.tc.df.gov.br/ice4/vordf/outros/html-comandos.html
-* https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/code""")
+* https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/code
+* https://www.ti-enxame.com/pt/r/centrar-imagem-e-texto-em-r-markdown-para-um-relatorio-pdf/1046822178/
+* https://docs.streamlit.io/en/stable/api.html
+* https://rknagao.medium.com/streamlit-101-o-b%C3%A1sico-para-colocar-seu-projeto-no-ar-38a71bd641eb
+* https://streamlit.io/""")
