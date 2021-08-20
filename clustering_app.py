@@ -121,8 +121,11 @@ plt.clf()
 st.markdown("""Percebe-se que no gráfico da **Curva do Cotovelo** o melhor valor para o número de cluters 
 no modelo KMeans é de 3 clusters.""")
 
+st.subheader("Escolha o número de clusters que deseja utilizar para o modelo KMeans :rocket:")
+num_clus = st.slider('Qual o número de clusters irá utilizar?', 1, 10, 3)
+
 # Algoritmo KMeans.
-kmeans = KMeans(n_clusters = 3, max_iter = 300, n_init = 10, random_state = 0)
+kmeans = KMeans(n_clusters = num_clus, max_iter = 300, n_init = 10, random_state = 0)
 kmeans.fit(X)
 clusters = kmeans.fit_predict(X)
 
@@ -138,18 +141,187 @@ labels = kmeans.labels_
 # Faz a clusterização dos dados usando o modelo criado
 grupos = kmeans.predict(X)
 
-# Gráfico com os Clusters.
-plt.scatter(X.iloc[clusters == 0,0], X.iloc[clusters == 0,1], s=50, color='red')
-plt.scatter(X.iloc[clusters == 1,0], X.iloc[clusters == 1,1], s=50, color='green')
-plt.scatter(X.iloc[clusters == 2,0], X.iloc[clusters == 2,1], s=50, color='yellow')
+if num_clus == 1:
+    # Gráfico com os Clusters.
+    plt.scatter(X.iloc[clusters == 0,0], X.iloc[clusters == 0,1], s=50, color='red')
+    # Centroids
+    plt.scatter(centroids[0][0], centroids[0][1], marker="*", s=200, color='black')
+    # Título e visualização
+    plt.title("Clusters por flor e seus centroids")
+    st.pyplot(fig)
+    plt.clf()
+elif num_clus == 2:
+    # Gráfico com os Clusters.
+    plt.scatter(X.iloc[clusters == 0,0], X.iloc[clusters == 0,1], s=50, color='red')
+    plt.scatter(X.iloc[clusters == 1,0], X.iloc[clusters == 1,1], s=50, color='green')
+    # Centroids
+    plt.scatter(centroids[0][0], centroids[0][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[1][0], centroids[1][1], marker="*", s=200, color='black')
+    # Título e visualização
+    plt.title("Clusters por flor e seus centroids")
+    st.pyplot(fig)
+    plt.clf()
+elif num_clus == 3:
+    # Gráfico com os Clusters.
+    plt.scatter(X.iloc[clusters == 0,0], X.iloc[clusters == 0,1], s=50, color='red')
+    plt.scatter(X.iloc[clusters == 1,0], X.iloc[clusters == 1,1], s=50, color='green')
+    plt.scatter(X.iloc[clusters == 2,0], X.iloc[clusters == 2,1], s=50, color='yellow')
+    # Centroids
+    plt.scatter(centroids[0][0], centroids[0][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[1][0], centroids[1][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[2][0], centroids[2][1], marker="*", s=200, color='black')
+    # Título e visualização
+    plt.title("Clusters por flor e seus centroids")
+    st.pyplot(fig)
+    plt.clf()
+elif num_clus == 4:
+    # Gráfico com os Clusters.
+    plt.scatter(X.iloc[clusters == 0,0], X.iloc[clusters == 0,1], s=50, color='red')
+    plt.scatter(X.iloc[clusters == 1,0], X.iloc[clusters == 1,1], s=50, color='green')
+    plt.scatter(X.iloc[clusters == 2,0], X.iloc[clusters == 2,1], s=50, color='yellow')
+    plt.scatter(X.iloc[clusters == 3,0], X.iloc[clusters == 3,1], s=50, color='blue')
+    # Centroids
+    plt.scatter(centroids[0][0], centroids[0][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[1][0], centroids[1][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[2][0], centroids[2][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[3][0], centroids[3][1], marker="*", s=200, color='black')
+    # Título e visualização
+    plt.title("Clusters por flor e seus centroids")
+    st.pyplot(fig)
+    plt.clf()
+elif num_clus == 5:
+    # Gráfico com os Clusters.
+    plt.scatter(X.iloc[clusters == 0,0], X.iloc[clusters == 0,1], s=50, color='red')
+    plt.scatter(X.iloc[clusters == 1,0], X.iloc[clusters == 1,1], s=50, color='green')
+    plt.scatter(X.iloc[clusters == 2,0], X.iloc[clusters == 2,1], s=50, color='yellow')
+    plt.scatter(X.iloc[clusters == 3,0], X.iloc[clusters == 3,1], s=50, color='blue')
+    plt.scatter(X.iloc[clusters == 4,0], X.iloc[clusters == 4,1], s=50, color='orange')
+    # Centroids
+    plt.scatter(centroids[0][0], centroids[0][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[1][0], centroids[1][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[2][0], centroids[2][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[3][0], centroids[3][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[4][0], centroids[4][1], marker="*", s=200, color='black')
+    # Título e visualização
+    plt.title("Clusters por flor e seus centroids")
+    st.pyplot(fig)
+    plt.clf()
+elif num_clus == 6:
+    # Gráfico com os Clusters.
+    plt.scatter(X.iloc[clusters == 0,0], X.iloc[clusters == 0,1], s=50, color='red')
+    plt.scatter(X.iloc[clusters == 1,0], X.iloc[clusters == 1,1], s=50, color='green')
+    plt.scatter(X.iloc[clusters == 2,0], X.iloc[clusters == 2,1], s=50, color='yellow')
+    plt.scatter(X.iloc[clusters == 3,0], X.iloc[clusters == 3,1], s=50, color='blue')
+    plt.scatter(X.iloc[clusters == 4,0], X.iloc[clusters == 4,1], s=50, color='orange')
+    plt.scatter(X.iloc[clusters == 5,0], X.iloc[clusters == 5,1], s=50, color='violet')
+    # Centroids
+    plt.scatter(centroids[0][0], centroids[0][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[1][0], centroids[1][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[2][0], centroids[2][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[3][0], centroids[3][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[4][0], centroids[4][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[5][0], centroids[5][1], marker="*", s=200, color='black')
+    # Título e visualização
+    plt.title("Clusters por flor e seus centroids")
+    st.pyplot(fig)
+    plt.clf()
+elif num_clus == 7:
+    # Gráfico com os Clusters.
+    plt.scatter(X.iloc[clusters == 0,0], X.iloc[clusters == 0,1], s=50, color='red')
+    plt.scatter(X.iloc[clusters == 1,0], X.iloc[clusters == 1,1], s=50, color='green')
+    plt.scatter(X.iloc[clusters == 2,0], X.iloc[clusters == 2,1], s=50, color='yellow')
+    plt.scatter(X.iloc[clusters == 3,0], X.iloc[clusters == 3,1], s=50, color='blue')
+    plt.scatter(X.iloc[clusters == 4,0], X.iloc[clusters == 4,1], s=50, color='orange')
+    plt.scatter(X.iloc[clusters == 5,0], X.iloc[clusters == 5,1], s=50, color='violet')
+    plt.scatter(X.iloc[clusters == 6,0], X.iloc[clusters == 6,1], s=50, color='cyan')
+    # Centroids
+    plt.scatter(centroids[0][0], centroids[0][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[1][0], centroids[1][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[2][0], centroids[2][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[3][0], centroids[3][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[4][0], centroids[4][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[5][0], centroids[5][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[6][0], centroids[6][1], marker="*", s=200, color='black')
+    # Título e visualização
+    plt.title("Clusters por flor e seus centroids")
+    st.pyplot(fig)
+    plt.clf()
+elif num_clus == 8:
+    # Gráfico com os Clusters.
+    plt.scatter(X.iloc[clusters == 0,0], X.iloc[clusters == 0,1], s=50, color='red')
+    plt.scatter(X.iloc[clusters == 1,0], X.iloc[clusters == 1,1], s=50, color='green')
+    plt.scatter(X.iloc[clusters == 2,0], X.iloc[clusters == 2,1], s=50, color='yellow')
+    plt.scatter(X.iloc[clusters == 3,0], X.iloc[clusters == 3,1], s=50, color='blue')
+    plt.scatter(X.iloc[clusters == 4,0], X.iloc[clusters == 4,1], s=50, color='orange')
+    plt.scatter(X.iloc[clusters == 5,0], X.iloc[clusters == 5,1], s=50, color='violet')
+    plt.scatter(X.iloc[clusters == 6,0], X.iloc[clusters == 6,1], s=50, color='cyan')
+    plt.scatter(X.iloc[clusters == 7,0], X.iloc[clusters == 7,1], s=50, color='deeppink')
+    # Centroids
+    plt.scatter(centroids[0][0], centroids[0][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[1][0], centroids[1][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[2][0], centroids[2][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[3][0], centroids[3][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[4][0], centroids[4][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[5][0], centroids[5][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[6][0], centroids[6][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[7][0], centroids[7][1], marker="*", s=200, color='black')
+    # Título e visualização
+    plt.title("Clusters por flor e seus centroids")
+    st.pyplot(fig)
+    plt.clf()
+elif num_clus == 9:
+    # Gráfico com os Clusters.
+    plt.scatter(X.iloc[clusters == 0,0], X.iloc[clusters == 0,1], s=50, color='red')
+    plt.scatter(X.iloc[clusters == 1,0], X.iloc[clusters == 1,1], s=50, color='green')
+    plt.scatter(X.iloc[clusters == 2,0], X.iloc[clusters == 2,1], s=50, color='yellow')
+    plt.scatter(X.iloc[clusters == 3,0], X.iloc[clusters == 3,1], s=50, color='blue')
+    plt.scatter(X.iloc[clusters == 4,0], X.iloc[clusters == 4,1], s=50, color='orange')
+    plt.scatter(X.iloc[clusters == 5,0], X.iloc[clusters == 5,1], s=50, color='violet')
+    plt.scatter(X.iloc[clusters == 6,0], X.iloc[clusters == 6,1], s=50, color='cyan')
+    plt.scatter(X.iloc[clusters == 7,0], X.iloc[clusters == 7,1], s=50, color='deeppink')
+    plt.scatter(X.iloc[clusters == 8,0], X.iloc[clusters == 8,1], s=50, color='beige')
+    # Centroids
+    plt.scatter(centroids[0][0], centroids[0][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[1][0], centroids[1][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[2][0], centroids[2][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[3][0], centroids[3][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[4][0], centroids[4][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[5][0], centroids[5][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[6][0], centroids[6][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[7][0], centroids[7][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[8][0], centroids[8][1], marker="*", s=200, color='black')
+    # Título e visualização
+    plt.title("Clusters por flor e seus centroids")
+    st.pyplot(fig)
+    plt.clf()
+elif num_clus == 10:
+    # Gráfico com os Clusters.
+    plt.scatter(X.iloc[clusters == 0,0], X.iloc[clusters == 0,1], s=50, color='red')
+    plt.scatter(X.iloc[clusters == 1,0], X.iloc[clusters == 1,1], s=50, color='green')
+    plt.scatter(X.iloc[clusters == 2,0], X.iloc[clusters == 2,1], s=50, color='yellow')
+    plt.scatter(X.iloc[clusters == 3,0], X.iloc[clusters == 3,1], s=50, color='blue')
+    plt.scatter(X.iloc[clusters == 4,0], X.iloc[clusters == 4,1], s=50, color='orange')
+    plt.scatter(X.iloc[clusters == 5,0], X.iloc[clusters == 5,1], s=50, color='violet')
+    plt.scatter(X.iloc[clusters == 6,0], X.iloc[clusters == 6,1], s=50, color='cyan')
+    plt.scatter(X.iloc[clusters == 7,0], X.iloc[clusters == 7,1], s=50, color='deeppink')
+    plt.scatter(X.iloc[clusters == 8,0], X.iloc[clusters == 8,1], s=50, color='beige')
+    plt.scatter(X.iloc[clusters == 9,0], X.iloc[clusters == 9,1], s=50, color='chocolate')
+    # Centroids
+    plt.scatter(centroids[0][0], centroids[0][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[1][0], centroids[1][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[2][0], centroids[2][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[3][0], centroids[3][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[4][0], centroids[4][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[5][0], centroids[5][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[6][0], centroids[6][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[7][0], centroids[7][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[8][0], centroids[8][1], marker="*", s=200, color='black')
+    plt.scatter(centroids[9][0], centroids[9][1], marker="*", s=200, color='black')
+    # Título e visualização
+    plt.title("Clusters por flor e seus centroids")
+    st.pyplot(fig)
+    plt.clf()
 
-plt.scatter(centroids[0][0], centroids[0][1], marker="*", s=200, color='black')
-plt.scatter(centroids[1][0], centroids[1][1], marker="*", s=200, color='black')
-plt.scatter(centroids[2][0], centroids[2][1], marker="*", s=200, color='black')
-
-plt.title("Clusters por flor e seus centroids")
-st.pyplot(fig)
-plt.clf()
 
 st.subheader("""Avaliando o modelo""")
 st.markdown("""Utilizaremos a tabela cruzada para verificar a qualidade das predições feitas pelo modelo.""")
@@ -166,10 +338,8 @@ sns.heatmap(ct,annot=True,cbar=False,cmap="Blues") #annot mostra os coeficientes
 st.pyplot(fig)
 plt.clf()
 
-st.markdown("""Pode-se perceber que o modelo acertou todas as `50` flores do tipo **Setosa**, mas está errando `14` flores do 
-tipo **Víginica** e `2` do tipo **Versicolor**. Mas já podemos ver o funcionamento do mesmo""")
-
-# testando linha adicional.
+st.markdown("""Pode-se perceber que seguindo o princípio do método do cotovelo com 3 clusters, o modelo acertou todas as `50` flores do tipo **Setosa**, 
+mas está errando `14` flores do tipo **Víginica** e `2` do tipo **Versicolor**. Mas já podemos ver o funcionamento do mesmo""")
 
 st.markdown("""## Referências: 
 * https://www.youtube.com/watch?v=EItlUEPCIzM 
@@ -179,4 +349,5 @@ st.markdown("""## Referências:
 * http://archive.ics.uci.edu/ml/datasets/Iris
 * https://medium.com/greyatom/using-clustering-for-feature-engineering-on-the-iris-dataset-f438366d0b4b
 * https://www.kaggle.com/rae385/iris-classification-and-visualization
-* https://www.javatpoint.com/k-means-clustering-algorithm-in-machine-learning""")
+* https://www.javatpoint.com/k-means-clustering-algorithm-in-machine-learning
+* https://matplotlib.org/stable/gallery/color/named_colors.html""")
