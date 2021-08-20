@@ -29,7 +29,8 @@ st.markdown("""<p align='justify'>A Clusterização pode ser usada tanto na prep
 de modelos com o objetivo de criar grupos, separando os dados em grupos ainda desconhecidos. A ideia é a partir dos dados referentes ao tamanho 
 da <b>Pétala</b> e da <b>Sépala</b> de cada flor, ou seja, as variáveis <code>sepal.length</code>, <code>sepal.width</code>, <code>petal.length</code> e <code>petal.width</code>, seja possível encontrar e
 definir qual é a classe/grupo <code>variety</code> de flor íris pertence o dado. <p align='justify'>""", unsafe_allow_html=True)
-st.image("<center>images/petal_sepal.png</center>")   
+
+st.image("images/petal_sepal.png")   
 
 st.markdown("""Utilizando um modelo de clusterização, ou seja, um modelo de aprendizado de máquina (machine learning) não-supervisionado, para classificar/prever 
 as espécies da flor da íris em três espécies neste conjunto de dados. Este modelo de machine learning não utiliza a target, e por isso é chamado de 
@@ -355,3 +356,7 @@ st.markdown("""## Referências:
 * https://docs.streamlit.io/en/stable/api.html
 * https://rknagao.medium.com/streamlit-101-o-b%C3%A1sico-para-colocar-seu-projeto-no-ar-38a71bd641eb
 * https://streamlit.io/""")
+
+"![[rafhaelom][https://img.shields.io/badge/-GitHub-333333?style=flat&logo=github][github]]"
+"[github]: http://www.google.com/"
+f"![GitHub](https://img.shields.io/badge/-GitHub-333333?style=flat&logo=github)"
