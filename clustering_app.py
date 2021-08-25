@@ -3,7 +3,6 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-import plotly.express as px
 from sklearn.cluster import KMeans
 
 st.title("Íris Clustering")
@@ -30,11 +29,11 @@ de modelos com o objetivo de criar grupos, separando os dados em grupos ainda de
 da <b>Pétala</b> e da <b>Sépala</b> de cada flor, ou seja, as variáveis <code>sepal.length</code>, <code>sepal.width</code>, <code>petal.length</code> e <code>petal.width</code>, seja possível encontrar e
 definir qual é a classe/grupo <code>variety</code> de flor íris pertence o dado. <p align='justify'>""", unsafe_allow_html=True)
 
-st.image("images/petal_sepal.png")   
+st.image("images/petal_sepal.png")
 
-st.markdown("""Utilizando um modelo de clusterização, ou seja, um modelo de aprendizado de máquina (machine learning) não-supervisionado, para classificar/prever 
+st.markdown("""<p align='justify'>Utilizando um modelo de clusterização, ou seja, um modelo de aprendizado de máquina (machine learning) não-supervisionado, para classificar/prever 
 as espécies da flor da íris em três espécies neste conjunto de dados. Este modelo de machine learning não utiliza a target, e por isso é chamado de 
-não-supervisionado, e sendo as colunas conhecidas por dimensões.""")
+não-supervisionado, e sendo as colunas conhecidas por dimensões. <p align='justify'>""", unsafe_allow_html=True)
 st.image("images/k-means-clustering.png")
 
 st.subheader("Dataset :floppy_disk:")
@@ -57,7 +56,7 @@ st.markdown("""### Classes que podem ser encontradas:
 * Iris Versicolour
 * Iris Virginica""")
 
-st.markdown("Verificando a quantidade por tipo de classe, conforme especificado, tem-se 50 instâncias por cada uma das 3 classes nas 4 dimensões do dataset.")
+st.markdown("""<p align='justify'>Verificando a quantidade por tipo de classe, conforme especificado, tem-se 50 instâncias por cada uma das 3 classes nas 4 dimensões do dataset. <p align='justify'>""", unsafe_allow_html=True)
 st.write(df["variety"].value_counts())
 
 # Gráfico.
@@ -75,8 +74,8 @@ st.pyplot(fig)
 plt.clf()
 
 st.subheader("Preparação dos dados :building_construction:")
-st.markdown("""Nesta etapa será necessária a separação da coluna `variety` das outras colunas (dimensões) do dataset, afim de 
-analisar as variáveis de medida das plantas, sem ser passado ao modelo de ML a `Target` que no caso é a `variety`.""")
+st.markdown("""<p align='justify'>Nesta etapa será necessária a separação da coluna <code>variety</code> das outras colunas (dimensões) do dataset, afim de 
+analisar as variáveis de medida das plantas, sem ser passado ao modelo de ML a <code>Target</code> que no caso é a <code>variety</code>. <p align='justify'>""", unsafe_allow_html=True)
 
 X = df.iloc[:, 0:4]
 
@@ -84,23 +83,23 @@ if st.checkbox("Mostrar o dataset preparado"):
     st.dataframe(X) 
 
 st.subheader("Modelo :construction:")
-st.markdown("""Utilizaremos o KMeans que não será passado a target para o modelo, e por esse motivo ele é considerado um modelo 
+st.markdown("""<p align='justify'> Utilizaremos o KMeans que não será passado a target para o modelo, e por esse motivo ele é considerado um modelo 
 de não-supervisionado. 
 
 A grande questão que o algoritmo KMeans exige é a específicação do número de grupos K. Às vezes, o número de grupos é direcionado pela 
 aplicação. Por exemplo, no nosso dataset sabemos que tem-se 3 tipos diferentes de flores íris, portanto o mínimo de clusters ou grupos 
 necessário para o modelo é de 3. 
-""")
+<p align='justify'>""", unsafe_allow_html=True)
 
 st.image("images/flores_iris.png")
 
 st.subheader("Método do Cotovelo")
-st.markdown("""Mas em alguns momentos não temos essa noção de grupos, e portanto precisamos de uma definição deste, sendo 
-então necessária uma abordagem estatística, o mais comum é utilizar de um método para definir o número de clusters para o modelo.""")
+st.markdown("""<p align='justify'>Mas em alguns momentos não temos essa noção de grupos, e portanto precisamos de uma definição deste, sendo 
+então necessária uma abordagem estatística, o mais comum é utilizar de um método para definir o número de clusters para o modelo. <p align='justify'>""", unsafe_allow_html=True)
 
-st.markdown("""Este método é chamado de **Método do Cotovelo**, basicamente ele é utilizado para identificar quando o conjunto de grupos explica 
-a ***maioria*** da variância nos dados. O ***cotovelo*** é o ponto em que a variância explicada cumulativa se estabiliza depois de uma subida brusca, 
-por isso o nome do método.""")
+st.markdown("""<p align='justify'>Este método é chamado de <b>Método do Cotovelo</b>, basicamente ele é utilizado para identificar quando o conjunto de grupos explica 
+a <i>maioria</i> da variância nos dados. O <i>cotovelo</i> é o ponto em que a variância explicada cumulativa se estabiliza depois de uma subida brusca, 
+por isso o nome do método. <p align='justify'>""", unsafe_allow_html=True)
 
 
 wcss = []
@@ -116,8 +115,8 @@ plt.ylabel("Somatório da variância explicada cumulativa")
 st.pyplot(fig)
 plt.clf()
 
-st.markdown("""Percebe-se que no gráfico da **Curva do Cotovelo** o melhor valor para o número de cluters 
-no modelo KMeans é de 3 clusters.""")
+st.markdown("""<p align='justify'>Percebe-se que no gráfico da <b>Curva do Cotovelo</b> o melhor valor para o número de cluters 
+no modelo KMeans é de 3 clusters. <p align='justify'>""", unsafe_allow_html=True)
 
 st.subheader("Escolha o número de clusters que deseja utilizar para o modelo KMeans :rocket:")
 num_clus = st.slider('Qual o número de clusters irá utilizar?', 1, 10, 3)
@@ -336,8 +335,8 @@ sns.heatmap(ct,annot=True,cbar=False,cmap="Blues") #annot mostra os coeficientes
 st.pyplot(fig)
 plt.clf()
 
-st.markdown("""Pode-se perceber que seguindo o princípio do método do cotovelo com 3 clusters, o modelo acertou todas as `50` flores do tipo **Setosa**, 
-mas está errando `14` flores do tipo **Víginica** e `2` do tipo **Versicolor**. Mas já podemos ver o funcionamento do mesmo""")
+st.markdown("""<p align='justify'>Pode-se perceber que seguindo o princípio do método do cotovelo com 3 clusters, o modelo acertou todas as <code>50</code> flores do tipo <b>Setosa</b>, 
+mas está errando <code>14</code> flores do tipo <b>Víginica</b> e <code>2</code> do tipo <b>Versicolor</b>. Mas já podemos ver o funcionamento do mesmo. <p align='justify'>""", unsafe_allow_html=True)
 
 st.markdown("""## Referências: 
 * https://www.youtube.com/watch?v=EItlUEPCIzM 
@@ -357,6 +356,7 @@ st.markdown("""## Referências:
 * https://rknagao.medium.com/streamlit-101-o-b%C3%A1sico-para-colocar-seu-projeto-no-ar-38a71bd641eb
 * https://streamlit.io/""")
 
-"![[rafhaelom][https://img.shields.io/badge/-GitHub-333333?style=flat&logo=github][github]]"
-"[github]: http://www.google.com/"
-f"![GitHub](https://img.shields.io/badge/-GitHub-333333?style=flat&logo=github)"
+st.subheader("Web App feito por Rafhael de Oliveira Martins")
+st.markdown("Data 25/08/2021")
+"[Repositório](https://github.com/rafhaelom/Iris_Clustering)"
+"[![GitHub](https://img.shields.io/badge/-GitHub-333333?style=for-the-badge&logo=github)](https://github.com/rafhaelom)" " " "[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rafhael-de-oliveira-martins-3bab63138)"
