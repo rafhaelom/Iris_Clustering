@@ -4,6 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.cluster import KMeans
+from sklearn import metrics
 
 st.title("Íris Clustering")
 
@@ -337,6 +338,22 @@ plt.clf()
 
 st.markdown("""<p align='justify'>Pode-se perceber que seguindo o princípio do método do cotovelo com 3 clusters, o modelo acertou todas as <code>50</code> flores do tipo <b>Setosa</b>, 
 mas está errando <code>14</code> flores do tipo <b>Víginica</b> e <code>2</code> do tipo <b>Versicolor</b>. Mas já podemos ver o funcionamento do mesmo. <p align='justify'>""", unsafe_allow_html=True)
+
+
+results = df[["variety"]].copy()
+results["clusters"] = clusters
+
+teste = results.groupby(['clusters']).agg(lambda x:x.value_counts().index[0])
+teste.reset_index(inplace=True)
+
+colunas = {'variety': 'flor'}
+teste.rename(columns=colunas, inplace=True)
+
+dados = results.merge(teste, how="left", on="clusters")
+
+st.write("Precision_score micro: ", metrics.precision_score(dados["variety"], dados["flor"], average="micro"))
+
+st.write("Precision_score macro: ", metrics.precision_score(dados["variety"], dados["flor"], average="macro"))
 
 st.markdown("""## Referências: 
 * https://www.youtube.com/watch?v=EItlUEPCIzM 
