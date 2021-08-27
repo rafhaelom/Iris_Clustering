@@ -371,7 +371,9 @@ st.markdown("""## Referências:
 * https://www.ti-enxame.com/pt/r/centrar-imagem-e-texto-em-r-markdown-para-um-relatorio-pdf/1046822178/
 * https://docs.streamlit.io/en/stable/api.html
 * https://rknagao.medium.com/streamlit-101-o-b%C3%A1sico-para-colocar-seu-projeto-no-ar-38a71bd641eb
-* https://streamlit.io/""")
+* https://streamlit.io/
+* https://scikit-learn.org/stable/modules/generated/sklearn.metrics.precision_score.html
+* https://scikit-learn.org/stable/modules/generated/sklearn.metrics.accuracy_score.html#sklearn.metrics.accuracy_score""")
 
 st.subheader("Web App feito por Rafhael de Oliveira Martins")
 st.markdown("Data 25/08/2021")
