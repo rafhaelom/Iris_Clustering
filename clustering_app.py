@@ -25,12 +25,14 @@ st.subheader("Bom, já descobrimos o que é Íris e o que é Clustering, mas e a
 st.markdown("""<p align='justify'>Agora vamos entender o problema de negócio que pretendemos solucionar, entender qual e o que é o dado que temos! &#x1F601 <p align='justify'>""", unsafe_allow_html=True)
 
 st.subheader("""Problema de negócio :nerd_face:""")
-st.markdown("""<p align='justify'>A Clusterização pode ser usada tanto na preparação de dados para descobrir padrões ainda desconhecidos quanto para a criação 
-de modelos com o objetivo de criar grupos, separando os dados em grupos ainda desconhecidos. A ideia é a partir dos dados referentes ao tamanho 
+st.markdown("""<p align='justify'>A ideia é a partir dos dados referentes ao tamanho 
 da <b>Pétala</b> e da <b>Sépala</b> de cada flor, ou seja, as variáveis <code>sepal.length</code>, <code>sepal.width</code>, <code>petal.length</code> e <code>petal.width</code>, seja possível encontrar e
-definir qual é a classe/grupo <code>variety</code> de flor íris pertence o dado. <p align='justify'>""", unsafe_allow_html=True)
+definir qual é a classe/grupo <code>variety</code> de flor íris pertence o dado. 
 
-st.image("images/petal_sepal.png")
+A Clusterização pode ser usada tanto na preparação de dados para descobrir padrões ainda desconhecidos quanto para a criação 
+de modelos com o objetivo de criar grupos, separando os dados em grupos ainda desconhecidos. <p align='justify'>""", unsafe_allow_html=True)
+
+#st.image("images/petal_sepal.png", width=None)
 
 st.markdown("""<p align='justify'>Utilizando um modelo de clusterização, ou seja, um modelo de aprendizado de máquina (machine learning) não-supervisionado, para classificar/prever 
 as espécies da flor da íris em três espécies neste conjunto de dados. Este modelo de machine learning não utiliza a target, e por isso é chamado de 
